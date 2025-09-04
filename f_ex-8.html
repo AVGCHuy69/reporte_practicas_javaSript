@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion de orden superior que retorna otra funcion</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/f_ex_8.jpg" alt="">
+    </div>
+    <script>
+        function crearSaludo(saludo){
+            return function(nombre){
+                return `${saludo},${nombre}`;
+            };
+        }
+        const saludoESP=crearSaludo('Hola');
+        const saludoEN=crearSaludo('Hello');
+        const saludoJP=crearSaludo('こんにちは');
+
+        document.write(saludoESP('Chuy'));
+        document.write(saludoESP('Yisus'));
+        document.write(saludoJP('Chuy-san'));
+    </script>
+</body>
+</html>

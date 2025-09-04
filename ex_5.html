@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pn{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Esto es un titulo provisional</h1>
+    <p>Adelante se viene una lista de mis comidas favoritas</p>
+    <ul>
+        <li id="xdl">Mole</li>
+        <li id="xdl">Tostadas de tinga</li>
+        <li id="xdl">Milanesas</li>
+    </ul>
+    <button id="cambio">Picale</button>
+    <script>
+    document.getElementById('cambio').addEventListener('click',()=>{
+        document.getElementById('title').textContent='Arriba las Milanesas de pollo'
+        
+    });
+    document.getElementById('xdl').addEventListener('mouseover',()=>{
+        const obj=document.querySelectorAll('#xdl');
+        obj.forEach(li=>{
+            li.classList.toggle('pn');
+        })
+    })
+</script>
+</body>
+</html>

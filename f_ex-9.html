@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con argumentos predeterminados</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/f_ex_9.jpg" alt="">
+    </div>
+    <script>
+        function crearMulti(factor){
+            return function(num){
+                return num*factor;
+            };
+        }
+        const duplicar=crearMulti(2);
+        const triplicar=crearMulti(3);
+
+        document.write(duplicar(5));
+        document.write(triplicar(5));
+    </script>
+</body>
+</html>

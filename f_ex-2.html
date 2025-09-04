@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division de 2 numeros</title>
+</head>
+<body>
+    <div class="img">
+        <img src="./imagenes/f_ex_2.jpg" alt="">
+    </div>
+    <script>
+        function dividir(a,b){
+            if(b===0){
+                return 'Error'
+            }
+            return a/b;
+        }
+        const dividirflecha=(a,b)=>b===0?'Error':a/b;
+        document.write(dividir(8,2));
+        document.write(dividir(8,0));
+        document.write(dividirflecha(8,2));
+        document.write(dividirflecha(8,0));
+    </script>
+</body>
+</html>

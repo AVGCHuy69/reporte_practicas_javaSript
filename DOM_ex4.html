@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .highlight{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/ex_4.jpg" alt="">
+    </div>
+    <div class="ex">
+    <h1 id="title">Mi pagina web :D</h1>
+    <p class="text">Este es un parrafo</p>
+    <p class="text">Otro parrafo. Waos</p>
+    <button id="changeContent">Cambiar contenido</button>
+    <buttton id="highlightText">Highlight Text</buttton>
+</div>
+    <script>
+        document.getElementById('changeContent').addEventListener('click',()=>{
+            document.getElementById('title').textContent='Hola perrillo'
+        });
+
+        document.getElementById('highlightText').addEventListener('click',()=>{
+            const parraf=document.querySelectorAll('.text');
+            parraf.forEach(p=>{
+                p.classList.toggle('highlight');
+            })
+        })
+    </script>
+</body>
+</html>

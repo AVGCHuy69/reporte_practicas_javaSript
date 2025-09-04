@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion que toma otra funcion como parametro</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/f_ex_5.jpg" alt="">
+    </div>
+    <script>
+        function ejecutarOp(a,b,op){
+            return op(a,b);
+        }
+        const sumar=(a,b)=>a+b;
+        const multi=(a,b)=>a*b;
+        const restar=(a,b)=>a-b;
+        const divi=(a,b)=>a/b;
+
+        document.write(ejecutarOp(5,2,sumar));
+         document.write(ejecutarOp(5,2,multi));
+          document.write(ejecutarOp(5,2,divi));
+           document.write(ejecutarOp(5,2,restar));
+    </script>
+</body>
+</html>

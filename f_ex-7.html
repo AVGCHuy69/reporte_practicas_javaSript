@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure para contar</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/f_ex_7.jpg" alt="">
+    </div>
+    <script>
+        function crearContador(){
+            let conta=0;
+            return function(){
+                conta+=1;
+                return conta;
+            }
+        };
+    const conta=crearContador();
+    document.write(conta());
+    document.write(conta());
+    document.write(conta());
+    document.write(conta());
+    document.write(conta());
+    document.write(conta());
+    </script>
+</body>
+</html>

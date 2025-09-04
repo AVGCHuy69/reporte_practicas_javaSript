@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="imgn">
+
+    </div>
+    <script>
+        function crearRNG(min,max)
+        {
+            return function(){
+                return Math.floor(Math.random()*(max-min + 1)) + min
+            }
+        }
+        function crearJAN(crearRNG){
+            const RN=crearRNG();
+            let intentos=0;
+            return function(adivina){
+                intentos +=1;
+                if (adivina<RN){
+                    return "El numero es mayor. Intentos: ${intentos}";
+                }else if(adivina>RN){
+                    return "El numero es menor. Intentos: ${intentos}";
+                }else{
+                    return "Felicidades le atinaste y solo en ${intentos} intentos"
+                }
+            }
+        }
+        function iniciarJuego(){
+            
+        }
+    </script>
+</body>
+</html>

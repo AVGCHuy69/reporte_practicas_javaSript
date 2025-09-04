@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/ex_1.jpg" alt="">
+    </div>
+    <div class="ex">
+    <h1>ejercicio 1</h1>
+    <div id="myDiv" class="myClass">Hola Mundo :D</div>
+    <button id="changeText">Change Text</button>
+    </div>
+</body>
+<script>
+    const myDiv=document.getElementById('myDiv');
+    document.write("myDiv");
+    document.write(myDiv);
+    
+    const elementsByClass=document.getElementsByClassName('myClass');
+    document.write("elementsByClass");
+    document.write(elementsByClass);
+
+    const elementsByTag=document.getElementsByTagName('div');
+    document.write("elementsByTag");
+    document.write(elementsByTag);
+
+    const queryElement=document.querySelector('#myDiv')
+    document.write("queryElement");
+    document.write(queryElement);
+    
+    const queryAllElements=document.querySelectorAll('div');
+    document.write("queryAllElements");
+    document.write(queryAllElements);
+</script>
+</html>

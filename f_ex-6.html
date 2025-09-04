@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcion en orden superior con map</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/f_ex_.6jpg.jpg" alt="">
+    </div>
+    <script>
+        function AParr(arr,operacion){
+            return arr.map(operacion)
+        }
+        const duplicar=(x)=>x*2;
+        const num=[1,2,3,4];
+        document.write(AParr(num,duplicar));
+
+        const triplicar=(x)=>x*3;
+        document.write(AParr(num,triplicar));
+    </script>
+</body>
+</html>

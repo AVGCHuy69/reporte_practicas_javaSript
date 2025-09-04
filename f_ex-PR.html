@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="" alt="">
+    </div>
+    <script>
+        const moduloContador = (function() {
+
+let contador = 0; // Variable privada
+
+return {
+
+incrementar: function() {
+
+contador++;
+
+return contador;
+
+},
+
+obtenerContador: function() {
+
+return contador;
+
+}
+
+};
+
+})();
+
+document.write(moduloContador.incrementar()); // 1
+
+document.write(moduloContador.incrementar()); // 2
+
+document.write(moduloContador.obtenerContador()); //2
+    </script>
+</body>
+</html>
