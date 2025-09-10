@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteracion sobre propiedades de objetos</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/AO-ex_7.jpg" alt="">
+    </div>
+    <script>
+        const libro={titulo:"El principito", autor:"Antoine de Saint-Exupéry", año: 1943};
+        for (let propiedad in libro){
+        document.write(`${propiedad}: ${libro[propiedad]}`);    
+        }
+    </script>
+</body>
+</html>

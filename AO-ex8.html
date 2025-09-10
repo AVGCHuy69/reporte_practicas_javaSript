@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Contar Propiedades de un objeto</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/AO-ex_8.jpg" alt="">
+    </div>
+    <script>
+        function contarPropiedades(obj){
+            return Object.keys(obj).length;
+        }
+        const carro ={marca:"Ford", modelo: "Mustang GT", año: 2003};
+        document.write(contarPropiedades(carro));
+    </script>
+</body>
+</html>

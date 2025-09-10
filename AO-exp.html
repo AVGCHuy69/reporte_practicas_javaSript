@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/AO-ex_p.jpg" alt="">
+    </div>
+    <script>
+        const usuarios = [
+  { id: 1, nombre: 'Ana', edad: 25, activo: true },
+  { id: 2, nombre: 'Luis', edad: 32, activo: false },
+  { id: 3, nombre: 'Marta', edad: 19, activo: true },
+  { id: 4, nombre: 'Carlos', edad: 45, activo: true },
+  { id: 5, nombre: 'Sofía', edad: 28, activo: false }
+];
+
+const nombresDeUsuarios = usuarios.map(usuario => usuario.nombre);
+document.write(JSON.stringify(nombresDeUsuarios));
+
+const usuariosActivos = usuarios.filter(usuario => usuario.activo === true);
+document.write(JSON.stringify(usuariosActivos));
+
+const sumaDeEdades = usuarios.reduce((acumulador, usuario) => acumulador + usuario.edad, 0);
+document.write(JSON.stringify(sumaDeEdades));
+    </script>
+</body>
+</html>

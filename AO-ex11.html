@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrupacion por propiedad</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/AO-ex_11.jpg" alt="">
+    </div>
+    <script>
+        function agruparPorCategoria(arr){
+            return arr.reduce((grupo, producto)=>{
+                const categoria=producto.categoria;
+                if(!grupo[categoria]){
+                    grupo[categoria]=[];
+                }
+                grupo[categoria].push(producto);
+                return grupo;
+            },{});
+        }
+        const producto =[{nombre:"camiseta", categoria:"ropa",},{nombre:"pantalon",categoria:"ropa"},{nombre:"zapatos",categoria:"calzado"},{nombre:"sandalias",categoria:"calzado"}];
+        document.write(JSON.stringify(agruparPorCategoria(producto)));
+    </script>
+</body>
+</html>
