@@ -16,7 +16,7 @@
                 return Math.floor(Math.random()*(max-min + 1)) + min
             }
         }
-        function crearJAN(crearRNG){
+        function crearJAN(GN){
             const RN=crearRNG();
             let intentos=0;
             return function(adivina){
@@ -31,8 +31,21 @@
             }
         }
         function iniciarJuego(){
-            
+            const rMin=parseInt(prompt("Ingrese el valor minimo del rango"));
+            const rMax=parseInt(prompt("Ingrese el valor maximo del rango"));
+            const GN=crearJAN(rMin,rMax);
+            let juego=crearJAN(GN);
+            let resultado;
+            do{
+                const adivina=parseInt(prompt("adivina el numero"));
+                resultado=juego(adivina);
+                alert(resultado);
+            }while(!resultado.includes("!Felcidades"));
+            if (confirm("¿Quieres jugar otra vez?")){
+                iniciarJuego();
+            }
         }
+        iniciarJuego();
     </script>
 </body>
 </html>
