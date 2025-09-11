@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejemplo callback</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/PA-ex_2.jpg" alt="">
+    </div>
+    <h2>Nombre y Edad</h2>
+    <script>
+        function obtenerDatos(callback){
+            setTimeout(()=>{
+                const datos={nombre: "Juan", edad: 30};
+                callback(datos);
+            }, 2000);
+        }
+
+        function mostrarDatos(datos){
+            document.write(`Nombre: ${datos.nombre}, Edad: ${datos.edad}`);
+        }
+        obtenerDatos(mostrarDatos);
+    </script>
+</body>
+</html>

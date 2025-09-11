@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Mostrar usuarios en una pagina web</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/PA-ex_6.jpg" alt="">
+    </div>
+    <h1>Usuarios</h1>
+    <ul id="users"></ul>
+
+    <script>
+        const obtenerUsuarios=()=>{
+            fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response=>response.json())
+            .then(data=>mostrarUsuarios(data))
+            .catch(error=>console.log('Error:',error));
+        };
+
+        const mostrarUsuarios=(users)=>{
+            const usersUl=document.getElementById('users');
+            usersUl.innerHTML='';
+            users.forEach(users=>{
+                const li=document.createElement('li');
+                li.textContent=users.name;
+                usersUl.appendChild(li);
+            });
+        };
+        obtenerUsuarios();
+    </script>
+</body>
+</html>

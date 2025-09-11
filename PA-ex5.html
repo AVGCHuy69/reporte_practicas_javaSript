@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assync Await</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/PA-ex_5.jpg" alt="">
+    </div>
+    <h1>Posts</h1>
+    <ul id="posts">
+
+    </ul>
+    <script>
+        async function obtenerPosts() {
+            try{
+                let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+                if(!response.ok){
+                    throw new Error('Error en la llamada a la API');
+                }
+                let posts=await response.json();
+                mostrarPosts(posts);
+            } catch(error){
+                console.log('Error', error);
+            }
+        }
+        function mostrarPosts(posts){
+            const postsUl=document.getElementById('posts');
+            posts.forEach(posts=>{
+                const li=document.createElement('li');
+                li.textContent=posts.title;
+                postsUl.appendChild(li);
+            });
+        }
+        obtenerPosts();
+    </script>
+</body>
+</html>

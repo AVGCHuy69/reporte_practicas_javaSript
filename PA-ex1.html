@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/PA-ex_1.jpg" alt="">
+    </div>
+    <script>
+        function sumar(a,b,callback){
+            const resultado=a+b;
+            callback(resultado);
+        }
+        function mostrarResultado(resultado){
+            document.write("La suma es: ",resultado);
+        }
+        sumar(5,10,mostrarResultado);
+    </script>
+</body>
+</html>

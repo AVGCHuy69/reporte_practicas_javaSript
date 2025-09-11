@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura baica de una promesa</title>
+</head>
+<body>
+    <div class="imgn">
+        <img src="./imagenes/PA-ex_3.jpg" alt="">
+    </div>
+    <script>
+        const miPromesa=new Promise((resolve,reject)=>{
+            const exito=true;
+
+            if(exito){
+                resolve("Operacion exitosa!");
+            }else{
+                reject("Algo salio mal.");
+            }
+        });
+
+        miPromesa
+        .then((resultado)=>{
+            document.write(resultado);
+        })
+        .catch((error)=>{
+            console.error(error);
+        });
+    </script>
+</body>
+</html>
