@@ -1,0 +1,1 @@
+export const Area=(b,h)=>(b*h)/2;

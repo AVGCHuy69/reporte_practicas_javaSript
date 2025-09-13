@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Vehículos con Clases en JavaScript</title>
+</head>
+<body>
+
+    <h1>Ejercicio de Vehículos</h1>
+    <div id="output">
+    </div>
+    <div class="imgn">
+        <img src="./imagenes/POO-1.jpg" alt="">
+        <img src="./imagenes/POO-2.jpg" alt="">
+        <img src="./imagenes/POO-3.jpg" alt="">
+    </div>
+
+    <script>
+        const outputDiv = document.getElementById('output');
+
+        function printToPage(title, content) {
+            const titleElement = document.createElement('h2');
+            titleElement.textContent = title;
+            outputDiv.appendChild(titleElement);
+
+            content.forEach(line => {
+                const p = document.createElement('p');
+                p.innerHTML = line;
+                outputDiv.appendChild(p);
+            });
+        }
+
+        class Vehiculo {
+            constructor(marca, modelo) {
+                this.marca = marca;
+                this.modelo = modelo;
+            }
+
+            mostrarInfo() {
+                return `Marca: ${this.marca}, Modelo: ${this.modelo}`;
+            }
+
+            arrancar() {
+                return `El vehículo ${this.modelo} ha arrancado.`;
+            }
+        }
+
+        class Coche extends Vehiculo {
+            constructor(marca, modelo, puertas) {
+                super(marca, modelo);
+                this.puertas = puertas;
+            }
+
+            mostrarPuertas() {
+                return `Número de puertas: ${this.puertas}`;
+            }
+        }
+
+        class Moto extends Vehiculo {
+            constructor(marca, modelo, cilindrada) {
+                super(marca, modelo);
+                this.cilindrada = cilindrada;
+            }
+
+            hacerCaballito() {
+                return `¡La moto ${this.modelo} está haciendo un caballito!`;
+            }
+
+            arrancar() {
+                return `¡Brrrum! La moto ${this.modelo} (${this.cilindrada}cc) ha arrancado con un rugido.`;
+            }
+        }
+
+        class Camion extends Vehiculo {
+            constructor(marca, modelo, capacidadCarga) {
+                super(marca, modelo);
+                this.capacidadCarga = capacidadCarga;
+            }
+
+            cargarMercancia(item) {
+                return `Cargando ${item} en el camión ${this.modelo}. Capacidad: ${this.capacidadCarga} kg.`;
+            }
+        }
+
+        const miVehiculo = new Vehiculo('Nissan', 'Tsuru');
+        printToPage('--- Vehículo Base ---', [
+            miVehiculo.mostrarInfo(),
+            miVehiculo.arrancar()
+        ]);
+        
+        const miCoche = new Coche('Toyota', 'Camry', 4);
+        printToPage('--- Coche ---', [
+            miCoche.mostrarInfo(),
+            miCoche.mostrarPuertas(),
+            miCoche.arrancar()
+        ]);
+        
+        const miMoto = new Moto('Italika', '110AT', 110);
+        printToPage('--- Moto ---', [
+            miMoto.mostrarInfo(),
+            miMoto.arrancar(),
+            miMoto.hacerCaballito()
+        ]);
+
+        const miCamion = new Camion('Volvo', 'FH16', 20000);
+        printToPage('--- Camión ---', [
+            miCamion.mostrarInfo(),
+            miCamion.arrancar(),
+            miCamion.cargarMercancia('cajas de electrodomésticos')
+        ]);
+
+    </script>
+</body>
+</html>
